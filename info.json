@@ -1,0 +1,275 @@
+{
+  "features": [
+    "SiO2",
+    "TiO2",
+    "Al2O3",
+    "FeO",
+    "MnO",
+    "MgO",
+    "CaO",
+    "Na2O",
+    "K2O",
+    "P2O5"
+  ],
+  "classes": [
+    "Andesite",
+    "Basalt",
+    "Basaltic andesite",
+    "Dacite",
+    "Rhyolite"
+  ],
+  "faixas": {
+    "SiO2": [
+      45.42,
+      83.73
+    ],
+    "TiO2": [
+      0.0,
+      3.64
+    ],
+    "Al2O3": [
+      3.23,
+      25.04
+    ],
+    "FeO": [
+      0.11,
+      16.38
+    ],
+    "MnO": [
+      0.0,
+      6.15
+    ],
+    "MgO": [
+      0.0,
+      16.68
+    ],
+    "CaO": [
+      0.0,
+      18.13
+    ],
+    "Na2O": [
+      0.02,
+      7.0
+    ],
+    "K2O": [
+      0.0,
+      9.58
+    ],
+    "P2O5": [
+      0.0,
+      1.65
+    ]
+  },
+  "limpeza": {
+    "linhas_originais": 4135,
+    "linhas_usadas": 4008,
+    "datas_recuperadas": 0,
+    "valores_imputados": {
+      "MnO": 149,
+      "Na2O": 1,
+      "P2O5": 208
+    }
+  },
+  "amostras_por_classe": {
+    "Basaltic andesite": 1272,
+    "Andesite": 1265,
+    "Basalt": 650,
+    "Dacite": 511,
+    "Rhyolite": 310
+  },
+  "hiperparametros": {
+    "estrutura": "tan",
+    "n_bins": 8
+  },
+  "estrutura_aprendida": [
+    [
+      "Classe",
+      "SiO2"
+    ],
+    [
+      "Classe",
+      "TiO2"
+    ],
+    [
+      "Classe",
+      "Al2O3"
+    ],
+    [
+      "Classe",
+      "FeO"
+    ],
+    [
+      "Classe",
+      "MnO"
+    ],
+    [
+      "Classe",
+      "MgO"
+    ],
+    [
+      "Classe",
+      "CaO"
+    ],
+    [
+      "Classe",
+      "Na2O"
+    ],
+    [
+      "Classe",
+      "K2O"
+    ],
+    [
+      "Classe",
+      "P2O5"
+    ],
+    [
+      "FeO",
+      "TiO2"
+    ],
+    [
+      "FeO",
+      "Al2O3"
+    ],
+    [
+      "SiO2",
+      "FeO"
+    ],
+    [
+      "FeO",
+      "MnO"
+    ],
+    [
+      "CaO",
+      "MgO"
+    ],
+    [
+      "SiO2",
+      "CaO"
+    ],
+    [
+      "CaO",
+      "Na2O"
+    ],
+    [
+      "CaO",
+      "K2O"
+    ],
+    [
+      "TiO2",
+      "P2O5"
+    ]
+  ],
+  "validacao_cruzada": {
+    "Árvore de decisão (base)": {
+      "acuracia_media": 0.8240837670890013,
+      "acuracia_dp": 0.01505662208014113,
+      "f1_macro_medio": 0.8156238605141765,
+      "f1_macro_dp": 0.018015007027304367
+    },
+    "Naive Bayes": {
+      "acuracia_media": 0.7726123998230957,
+      "acuracia_dp": 0.005923597947564944,
+      "f1_macro_medio": 0.768932190588846,
+      "f1_macro_dp": 0.009240658971562881
+    },
+    "BayesNet (TAN)": {
+      "acuracia_media": 0.7938268184933006,
+      "acuracia_dp": 0.011428849483264895,
+      "f1_macro_medio": 0.7903688997460805,
+      "f1_macro_dp": 0.017375074976122413
+    }
+  },
+  "teste": {
+    "acuracia": 0.8428927680798005,
+    "f1_macro": 0.8323017822890696,
+    "classes": [
+      "Andesite",
+      "Basalt",
+      "Basaltic andesite",
+      "Dacite",
+      "Rhyolite"
+    ],
+    "matriz_confusao": [
+      [
+        208,
+        5,
+        19,
+        20,
+        1
+      ],
+      [
+        0,
+        103,
+        26,
+        1,
+        0
+      ],
+      [
+        11,
+        9,
+        235,
+        0,
+        0
+      ],
+      [
+        16,
+        0,
+        2,
+        75,
+        9
+      ],
+      [
+        0,
+        0,
+        1,
+        6,
+        55
+      ]
+    ],
+    "relatorio": {
+      "Andesite": {
+        "precision": 0.8851063829787233,
+        "recall": 0.8221343873517787,
+        "f1-score": 0.8524590163934426,
+        "support": 253.0
+      },
+      "Basalt": {
+        "precision": 0.8803418803418803,
+        "recall": 0.7923076923076923,
+        "f1-score": 0.8340080971659919,
+        "support": 130.0
+      },
+      "Basaltic andesite": {
+        "precision": 0.8303886925795053,
+        "recall": 0.9215686274509803,
+        "f1-score": 0.8736059479553904,
+        "support": 255.0
+      },
+      "Dacite": {
+        "precision": 0.7352941176470589,
+        "recall": 0.7352941176470589,
+        "f1-score": 0.7352941176470589,
+        "support": 102.0
+      },
+      "Rhyolite": {
+        "precision": 0.8461538461538461,
+        "recall": 0.8870967741935484,
+        "f1-score": 0.8661417322834646,
+        "support": 62.0
+      },
+      "accuracy": 0.8428927680798005,
+      "macro avg": {
+        "precision": 0.8354569839402028,
+        "recall": 0.8316803197902116,
+        "f1-score": 0.8323017822890696,
+        "support": 802.0
+      },
+      "weighted avg": {
+        "precision": 0.8448715890366256,
+        "recall": 0.8428927680798005,
+        "f1-score": 0.8423484886649865,
+        "support": 802.0
+      }
+    }
+  }
+}

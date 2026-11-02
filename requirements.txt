@@ -1,0 +1,8 @@
+flask
+numpy
+scikit-learn
+gunicorn==21.2.0
+Flask-Cors==4.0.0
+pandas
+requests
+matplotlib
