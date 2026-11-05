@@ -1,13 +1,3 @@
-"""
-Treino do classificador de rochas ígneas com Rede Bayesiana (BayesNet).
-
-Uso:
-    python modelo.py                       # usa rochas_corrigido.csv (ou Rocks_Database.xlsx) se existir, senão o Google Sheets
-    python modelo.py meus_dados.xlsx       # ou um .xlsx/.csv específico
-    python modelo.py --sem-agrupar         # mantém as 10 classes (gabro, diorito, granito... separados)
-
-Gera: model.pkl, names.pkl, info.json e matriz_confusao.png
-"""
 import datetime as dt
 import json
 import os
@@ -44,12 +34,8 @@ AGRUPAR = "--sem-agrupar" not in sys.argv   # padrão: agrupa; use --sem-agrupar
 args = [a for a in sys.argv[1:] if not a.startswith("--")]
 if args:
     origem = args[0]
-elif os.path.exists("rochas_corrigido.csv"):
-    origem = "rochas_corrigido.csv"
 elif os.path.exists("Rocks_Database.xlsx"):
     origem = "Rocks_Database.xlsx"
-elif os.path.exists("rochas.csv"):
-    origem = "rochas.csv"
 else:
     origem = CSV_URL
 df = pd.read_excel(origem) if origem.lower().endswith((".xlsx", ".xls")) else pd.read_csv(origem)
@@ -153,7 +139,7 @@ melhor = grade.best_estimator_
 print(f"\nMelhores hiperparâmetros: {grade.best_params_} (F1-macro CV={grade.best_score_:.3f})")
 
 # ----------------------------------------------------------------------------
-# 5. Avaliação no conjunto de teste (nunca visto no treino/ajuste)
+# 5. Avaliação no conjunto de teste
 # ----------------------------------------------------------------------------
 pred = melhor.predict(X_te)
 acc = accuracy_score(y_te, pred)
